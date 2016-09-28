@@ -1,6 +1,7 @@
 stsbl-keyring (16.09.29-0) experimental; urgency=low
 
   * Repackaged package in new format. 
+  * Fixed permissions of keyring file.
 
  -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 29 Sep 2016 00:58:16 +0200
 
