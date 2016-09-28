@@ -1,0 +1,2 @@
+keyrings/* etc/apt/trusted.gpg.d/
+debian/changelog DEBIAN/

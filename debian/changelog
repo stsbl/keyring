@@ -1,0 +1,17 @@
+stsbl-keyring (16.09.29-0) experimental; urgency=low
+
+  * Repackaged package in new format. 
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 29 Sep 2016 00:58:16 +0200
+
+stsbl-keyring (16.02.02-0) experimental; urgency=low
+
+  * Updated version number format.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Tue, 02 Feb 2016 20:49:19 +0100
+
+stsbl-keyring (1.0) stable; urgency=low
+
+  * Initial release
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sat, 10 Oct 2015 02:46:14 +0200
