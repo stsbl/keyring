@@ -4,7 +4,6 @@
 # needed for lintian
 build:
 	dh_testdir
-	rm keyring.gpg
 	gpg --output keyring.gpg --export 6EC3F408B261E2FE103A6388A8ABC6F916974600	
 binary-indep: 
 	dh_clean
@@ -16,7 +15,8 @@ binary-indep:
 	mkdir -p $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/
 	cp keyring.gpg $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/stsbl.gpg
 	mkdir -p $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/
-        ln -s /usr/share/iserv/security/apt-keys/stsbl.gpg $(CURDIR)/debian/etc/apt/trusted.gpg.d/stsbl.gp $(CURDIR)/debian/etc/apt/trusted.gpg.d/stsbl.gpgg
+	ln -s /usr/share/iserv/security/apt-keys/stsbl.gpg $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/stsbl.gpg
+	rm -f keyring.gpg
 
 	dh_testroot
 	dh_installchangelogs 
