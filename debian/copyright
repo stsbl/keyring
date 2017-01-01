@@ -3,11 +3,11 @@ Upstream-Name: stsbl-keyring
 Source: <https://it.stsbl.de/documentation/general/setup-repository>
 
 Files: *
-Copyright: 2016 Felix Jacobi <felix.jacobi@stsbl.de>
+Copyright: 2017 Felix Jacobi <felix.jacobi@stsbl.de>
 License: GPL-3.0+
 
 Files: debian/*
-Copyright: 2016 Stadtteilschule Blankenese <repository@stsbl.de>
+Copyright: 2017 Stadtteilschule Blankenese <repository@stsbl.de>
 License: GPL-3.0+
 
 License: GPL-3.0+
