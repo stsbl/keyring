@@ -1,3 +1,12 @@
+stsbl-keyring (17.01.01-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Moved keyring to iserv apt-keys directory.
+
+  [ Stadtteilschule Blankenese ]
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sun, 01 Jan 2017 22:37:26 +0100
+
 stsbl-keyring (16.09.29-0) experimental; urgency=low
 
   * Repackaged package in new format. 
