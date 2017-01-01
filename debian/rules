@@ -1,25 +1,40 @@
 #!/usr/bin/make -f
-# See debhelper(7) (uncomment to enable)
-# output every command that modifies files on the build system.
-#export DH_VERBOSE = 1
+# rules for debuild
 
+# needed for lintian
+build:
+	dh_testdir
+	rm keyring.gpg
+	gpg --output keyring.gpg --export 6EC3F408B261E2FE103A6388A8ABC6F916974600	
+binary-indep: 
+	dh_clean
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
 
-# see FEATURE AREAS in dpkg-buildflags(1)
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+	mkdir -p $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/
+	cp keyring.gpg $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/stsbl.gpg
+	mkdir -p $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/
+        ln -s /usr/share/iserv/security/apt-keys/stsbl.gpg $(CURDIR)/debian/etc/apt/trusted.gpg.d/stsbl.gp $(CURDIR)/debian/etc/apt/trusted.gpg.d/stsbl.gpgg
 
-# see ENVIRONMENT in dpkg-buildflags(1)
-# package maintainers to append CFLAGS
-#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-# package maintainers to append LDFLAGS
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+	dh_testroot
+	dh_installchangelogs 
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
 
+# needed for lintian
+binary-arch:
 
-%:
-	dh $@ 
+binary: binary-indep
 
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean 
 
-# dh_make generated override targets
-# This is example for Cmake (See https://bugs.debian.org/641051 )
-#override_dh_auto_configure:
-#	dh_auto_configure -- #	-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH)
-
+.PHONY: build clean binary-indep binary install
