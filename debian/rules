@@ -4,7 +4,7 @@
 # needed for lintian
 build:
 	dh_testdir
-	gpg --output keyring.gpg --export 6EC3F408B261E2FE103A6388A8ABC6F916974600	
+	gpg --output keyring.gpg --export repository@stsbl.de	
 binary-indep: 
 	dh_clean
 	dh_testdir
