@@ -9,4 +9,5 @@ Homepage: https://it.stsbl.de/documentation/general/setup-repository
 Package: stsbl-keyring
 Architecture: all
 Description: Stadtteilschule Blankenese: Öffentlicher Schlüssel
- Dieses Paket fügt den öffentlichen Schlüssel des Repositorys der Stadtteilschule Blankenese zum Schlüsselbund von Aptitude hinzu.
+ Dieses Paket fügt den öffentlichen Schlüssel des Repositorys der
+ Stadtteilschule Blankenese zum Schlüsselbund von Aptitude hinzu.
