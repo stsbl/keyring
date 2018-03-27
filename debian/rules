@@ -1,40 +1,8 @@
 #!/usr/bin/make -f
-# rules for debuild
 
-# needed for lintian
-build:
-	dh_testdir
-	gpg --output keyring.gpg --export repository@stsbl.de	
-binary-indep: 
-	dh_clean
-	dh_testdir
-	dh_testroot
-	dh_prep 
-	dh_installdirs
+%:
+	dh $@
 
-	mkdir -p $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/
-	cp keyring.gpg $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/stsbl.gpg
-	mkdir -p $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/
-	ln -s /usr/share/iserv/security/apt-keys/stsbl.gpg $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/stsbl.gpg
-	rm -f keyring.gpg
-
-	dh_testroot
-	dh_installchangelogs 
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-# needed for lintian
-binary-arch:
-
-binary: binary-indep
-
-clean:
-	dh_testdir
-	dh_testroot
-	dh_clean 
-
-.PHONY: build clean binary-indep binary install
+override_dh_install:
+	dh_iservinstall3
+	dh_iservgitvars
