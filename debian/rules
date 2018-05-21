@@ -1,8 +1,17 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@
+	dh $@ --with=iserv
 
-override_dh_install:
+override_dh_iservinstall3:
 	dh_iservinstall3
-	dh_iservgitvars
+	mkdir -p $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/
+	cp keyring.gpg $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/stsbl.gpg
+	mkdir -p $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/
+	ln -s /usr/share/iserv/security/apt-keys/stsbl.gpg $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/stsbl.gpg
+
+build:
+	gpg --output keyring.gpg --export repository@stsbl.de
+
+override_dh_clean:
+	rm -f keyring.gpg
