@@ -3,6 +3,8 @@
 %:
 	dh $@ --with=iserv
 
+override_dh_iservcopyright:
+
 override_dh_iservinstall3:
 	dh_iservinstall3
 	mkdir -p $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/
