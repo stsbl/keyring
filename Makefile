@@ -34,7 +34,7 @@ $(KEYRING):
 	@# new-style GPG keyboxes)
 	@$(GPG) --output "$@" --export repository@stsbl.de
 
-	@# make exported keyring visible for dh_iservinstall3 (uses git ls-files
+	@# make exported keyring visible for dh_iservinstall3 (uses git ls-files)
 	@git add --intent-to-add --force "$@"; \
 
 	@chmod -v 0644 $@
