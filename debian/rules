@@ -4,17 +4,4 @@
 	dh $@ --with=iserv --with=stsbl
 
 override_dh_iservinstall3:
-	dh_iservinstall3 -X 'keys/*'
-
-build:
-	@if ! [ -f "stsbl.gpg" ]; then \
-	  export GNUPGHOME=$$(mktemp -d); \
-	  for key in keys/*.pub; do gpg --import "$$key"; done; \
-	  rm -fv "$$GNUPGHOME"; \
-	  gpg --output stsbl.gpg --export repository@stsbl.de; \
-	  git add --intent-to-add --force stsbl.gpg; \
-	fi
-
-override_dh_clean:
-	rm -f stsbl.gpg
-	git add -A
+	dh_iservinstall3 -X 'keys/*' -X 'Makefile'
