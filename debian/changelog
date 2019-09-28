@@ -1,3 +1,14 @@
+stsbl-keyring (19.09.29-1) experimental; urgency=medium
+
+  * Fixed too long extended description.
+  * Updated packaging
+  * Added new keys valid from 2019-09-28
+  * Improved package build
+  * Include keys in source
+  * Removed unused encryption and authentication keys which have no relevance to APT
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Sun, 29 Sep 2019 01:05:22 +0200
+
 stsbl-keyring (17.10.04-0) experimental; urgency=medium
 
   * Added new key (1C9E3AC2) to replace expiring key (16974600).
