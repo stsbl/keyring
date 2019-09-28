@@ -1,19 +1,20 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with=iserv
-
-override_dh_iservcopyright:
+	dh $@ --with=iserv --with=stsbl
 
 override_dh_iservinstall3:
-	dh_iservinstall3
-	mkdir -p $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/
-	cp keyring.gpg $(CURDIR)/debian/stsbl-keyring/usr/share/iserv/security/apt-keys/stsbl.gpg
-	mkdir -p $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/
-	ln -s /usr/share/iserv/security/apt-keys/stsbl.gpg $(CURDIR)/debian/stsbl-keyring/etc/apt/trusted.gpg.d/stsbl.gpg
+	dh_iservinstall3 -X 'keys/*'
 
 build:
-	gpg --output keyring.gpg --export repository@stsbl.de
+	@if ! [ -f "stsbl.gpg" ]; then \
+	  export GNUPGHOME=$$(mktemp -d); \
+	  for key in keys/*.pub; do gpg --import "$$key"; done; \
+	  rm -fv "$$GNUPGHOME"; \
+	  gpg --output stsbl.gpg --export repository@stsbl.de; \
+	  git add --intent-to-add --force stsbl.gpg; \
+	fi
 
 override_dh_clean:
-	rm -f keyring.gpg
+	rm -f stsbl.gpg
+	git add -A
