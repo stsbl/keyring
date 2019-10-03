@@ -5,7 +5,8 @@ stsbl-keyring (19.09.29-1) experimental; urgency=medium
   * Added new keys valid from 2019-09-28
   * Improved package build
   * Include keys in source
-  * Removed unused encryption and authentication keys which have no relevance to APT
+  * Removed unused encryption and authentication keys which have no relevance
+    to APT
   * Updated copyright, changed license to MIT
 
  -- Felix Jacobi <Felix@jacobi-hamburg.net>  Sun, 29 Sep 2019 01:13:17 +0200

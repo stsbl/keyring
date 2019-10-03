@@ -1,10 +1,10 @@
-GPGHOME := $(shell mktemp -d)
 KEYRING = "stsbl.gpg"
 GPG = gpg --homedir $(GPGHOME)
 
 .PHONY: $(KEYRING)
 
 $(KEYRING):
+	$(eval GPGHOME := $(shell mktemp -d))
 	@# ensure that there are no duplicate keys; this should help prevent
 	@# simple mistakes like accidentally exporting or copying the wrong key
 	@# from a smartcard
