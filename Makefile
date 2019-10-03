@@ -11,7 +11,7 @@ $(KEYRING):
 	@if fdupes keys | grep -q .; \
 	  then \
 	    echo "ERROR! Duplicate keys!" >&2; \
-	    fdupes keys; \
+	    fdupes keys >&2; \
 	    exit 1; \
 	  fi
 
