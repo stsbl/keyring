@@ -1,3 +1,13 @@
+stsbl-keyring (19.11.13-1) testing; urgency=medium
+
+  * Fixed duplicated linitian overrides
+  * Makefile fixup
+  * Split keys into data package
+  * Restructured key names, removed obsolete key 2017-10-04_1C9E3AC2 from
+    package
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Wed, 13 Nov 2019 05:52:00 +0100
+
 stsbl-keyring (19.09.29-1) experimental; urgency=medium
 
   * Fixed too long extended description.
