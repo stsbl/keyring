@@ -2,11 +2,13 @@ Source: stsbl-keyring
 Section: misc
 Priority: optional
 Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
-Build-Depends: debhelper (>= 10),
-  gpg,
-Build-Depends-Indep: iserv3-dev,
-  fdupes,
-Standards-Version: 4.4.1
+Build-Depends:
+ debhelper-compat (= 13),
+ fdupes,
+ gpg,
+ dh-sequence-iserv,
+ dh-sequence-stsbl,
+Standards-Version: 4.5.0
 Homepage: https://it.stsbl.de/documentation/general/setup-repository
 
 Package: stsbl-keyring
@@ -14,7 +16,7 @@ Architecture: all
 Depends: ${misc:Depends},
   ${perl:Depends},
   stsbl-keyring-data,
-Xb-Private-IServ-Revision: ${iserv:Revision}
+Xb-Private-Iserv-Revision: ${iserv:Revision}
 Description: Stadtteilschule Blankenese: Öffentlicher Schlüssel
  Dieses Paket fügt den öffentlichen Schlüssel des Repositorys der
  Stadtteilschule Blankenese zum Schlüsselbund von APT hinzu.
@@ -28,7 +30,7 @@ Depends: ${misc:Depends},
   ${perl:Depends},
 Breaks: stsbl-keyring (<< 19.11.12),
 Replaces: stsbl-keyring (<< 19.11.12),
-Xb-Private-IServ-Revision: ${iserv:Revision}
+Xb-Private-Iserv-Revision: ${iserv:Revision}
 Description: Stadtteilschule Blankenese: Öffentlicher Schlüssel (Daten)
  Dieses Paket fügt den öffentlichen Schlüssel des Repositorys der
  Stadtteilschule Blankenese zum Schlüsselbund von APT hinzu.

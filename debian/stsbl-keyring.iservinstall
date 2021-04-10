@@ -1,2 +1,4 @@
 LICENSE* usr/share/doc/stsbl-keyring
 lintian/stsbl-keyring usr/share/lintian/overrides
+X:Makefile
+X:keys/*
