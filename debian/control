@@ -2,20 +2,17 @@ Source: stsbl-keyring
 Section: misc
 Priority: optional
 Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
-Build-Depends:
- debhelper-compat (= 13),
- fdupes,
- gpg,
- dh-sequence-iserv,
- dh-sequence-stsbl,
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-iserv,
+               dh-sequence-stsbl,
+               fdupes,
+               gpg
 Standards-Version: 4.5.0
 Homepage: https://it.stsbl.de/documentation/general/setup-repository
 
 Package: stsbl-keyring
 Architecture: all
-Depends: ${misc:Depends},
-  ${perl:Depends},
-  stsbl-keyring-data,
+Depends: stsbl-keyring-data, ${misc:Depends}, ${perl:Depends}
 Xb-Private-Iserv-Revision: ${iserv:Revision}
 Description: Stadtteilschule Blankenese: Öffentlicher Schlüssel
  Dieses Paket fügt den öffentlichen Schlüssel des Repositorys der
@@ -26,10 +23,9 @@ Tag: suite::iserv, role::data, admin::file-distribution, security::authenticatio
 
 Package: stsbl-keyring-data
 Architecture: all
-Depends: ${misc:Depends},
-  ${perl:Depends},
-Breaks: stsbl-keyring (<< 19.11.12),
-Replaces: stsbl-keyring (<< 19.11.12),
+Depends: ${misc:Depends}, ${perl:Depends}
+Breaks: stsbl-keyring (<< 19.11.12)
+Replaces: stsbl-keyring (<< 19.11.12)
 Xb-Private-Iserv-Revision: ${iserv:Revision}
 Description: Stadtteilschule Blankenese: Öffentlicher Schlüssel (Daten)
  Dieses Paket fügt den öffentlichen Schlüssel des Repositorys der
