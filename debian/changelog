@@ -1,3 +1,12 @@
+stsbl-keyring (21.06.20.1) stable; urgency=medium
+
+  * Fixed wrong keygrip of 2019-09-28_8DA44F07.pub
+  * Moved package to iservinstall
+  * Updated copyright
+  * Turned source format to native
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Sun, 20 Jun 2021 21:17:09 +0200
+
 stsbl-keyring (19.11.13-1) testing; urgency=medium
 
   * Fixed duplicated linitian overrides
