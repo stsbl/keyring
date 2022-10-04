@@ -1,3 +1,11 @@
+stsbl-keyring (22.10.05.1) stable; urgency=medium
+
+  * Added new reserve smartcard keys:
+    - 2022-10-05_52864380
+    - 2022-10-05_C3114956
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Wed, 05 Oct 2022 01:43:26 +0200
+
 stsbl-keyring (21.08.18.1) stable; urgency=medium
 
   * Switched to git source format
