@@ -4,4 +4,4 @@ debian/stsbl-keyring.debhelper.log
 debian/stsbl-keyring.substvars
 debian/files
 debian/debhelper-build-stamp
-stsbl.gpg
+/stsbl.gpg
